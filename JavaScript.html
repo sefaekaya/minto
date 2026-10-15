@@ -402,7 +402,7 @@ function buildNav(){
  $('#bnav').innerHTML=NAV.filter(n=>n.alt!=null).sort((a,b)=>a.alt-b.alt).map(n=>n.id==='home'
   ?`<button id="n-home" class="home" data-nav="home" onclick="go('home')" aria-label="Ana sayfa" title="Ana sayfa">${SV(n.ic).replace('width="22" height="22"','width="28" height="28"')}</button>`
   :`<button id="n-${n.id}" data-nav="${n.id}" onclick="go('${n.id}')">${n.label}</button>`).join('');
- $('#dr').innerHTML=`<div class="dr-head"><b>Giderlerim</b><small id="dr-u"></small></div>`
+ $('#dr').innerHTML=`<div class="dr-head"><b>Minto</b><small id="dr-u"></small></div>`
   +NAV.map(n=>`<button class="dr-i" data-nav="${n.id}" onclick="go('${n.id}')">${SV(n.ic)}<span>${n.label}</span></button>`).join('')
   +'<div class="dr-sep"></div>'+NAV_EXTRA.map((x,i)=>`<button class="dr-i" onclick="navExtra(${i})">${SV(x.ic)}<span>${x.label}</span></button>`).join('');
 }
